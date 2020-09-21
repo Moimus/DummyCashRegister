@@ -20,8 +20,6 @@ public class QRViewModel extends ViewModel
 	{
 		//this.ChildModel = new MainModel();
 		this.qrContent = QRContent;
-		hexColorCode = new HexColorCode(QRContent);
-		this.hexColorImage = hexColorCode.codeImage;
 		this.qrImage = QRGen.generateQRCode(qrContent);
 		this.ParentView = new QRView(this);
 

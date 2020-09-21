@@ -4,8 +4,6 @@ import java.awt.Font;
 
 import javax.swing.UIManager;
 
-import org.omg.CORBA.PUBLIC_MEMBER;
-
 public class Dark extends Theme
 {
 	public Dark()

@@ -28,9 +28,20 @@ public class EnterButtonAction implements ActionListener
 	{
 		//TODO Article search in DB
 		Article gtin2Article = HTTP.getArticle(in.getText());
-		out.append("\n" + gtin2Article.name + "--" + gtin2Article.price);
-		in.setText("");
-		((MainViewModel)parent).articles.add(gtin2Article);
+		try
+		{
+			out.append("\n" + gtin2Article.name + "--" + gtin2Article.price);
+			in.setText("");
+			((MainViewModel)parent).articles.add(gtin2Article);	
+		}
+		catch (NullPointerException e) 
+		{
+			System.out.println("Article not found");
+		}
+		catch (Exception e) 
+		{
+			System.out.println("Generic Error");
+		}
 	}
 
 }

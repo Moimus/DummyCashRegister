@@ -40,8 +40,8 @@ public class DoneButtonAction implements ActionListener
 		System.out.println(rec.priceGross);
 		System.out.println(rec.priceNet);
 		System.out.println(rec.ToJSON().toJSONString());
-		rec.ToHex();
-		QRViewModel qrView = new QRViewModel(rec.ToJSON().toJSONString(), true); //TODO
+		//rec.ToHex();
+		QRViewModel qrView = new QRViewModel(rec.ToJSON().toJSONString()); //TODO
 
 	}
 

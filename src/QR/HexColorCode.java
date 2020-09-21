@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import org.w3c.dom.css.CSSPrimitiveValue;
 import org.w3c.dom.css.RGBColor;
 
+//Test Class to press more data in a color based code
 public class HexColorCode 
 {
 	public ArrayList<Color> colorCode;
