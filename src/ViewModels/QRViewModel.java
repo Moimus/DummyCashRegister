@@ -32,7 +32,7 @@ public class QRViewModel extends ViewModel
 		hexColorCode = new HexColorCode(QRContent);
 		this.hexColorImage = hexColorCode.codeImage;
 		this.qrImage = QRGen.generateQRCode(qrContent);
-		this.ParentView = new QRView(this, true);
+		this.ParentView = new QRView(this, true); // set second param true for hexColorCode
 
 	}
 

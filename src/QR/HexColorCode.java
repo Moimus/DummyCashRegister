@@ -65,7 +65,8 @@ public class HexColorCode
 	
 	private BufferedImage toBufferedImage(ArrayList<Color> colorList)
 	{
-		int imageSize = colorList.size();
+		int pixelSize = 8;
+		int imageSize = 500;
 		BufferedImage image = new BufferedImage(imageSize, imageSize, BufferedImage.TYPE_INT_ARGB);
 		int x = 0;
 		int y = 0;
@@ -73,16 +74,28 @@ public class HexColorCode
 		int lineCounter = 0;
 		for(int n = 0; n < colorList.size(); n++)
 		{
-			if (x != 20) 
+			if (x != 20 * pixelSize) 
 			{
-				image.setRGB(x, y, colorList.get(n).getRGB());
-				x++;
+				for(int i = 0; i < pixelSize; i++)
+				{
+					for(int j = 0; j < pixelSize; j++)
+					{
+						image.setRGB(x + i, y + j, colorList.get(n).getRGB());
+					}
+				}
+				x += pixelSize;
 			}
 			else
 			{
-				image.setRGB(x, y, colorList.get(n).getRGB());
+				for(int i = 0; i < pixelSize; i++)
+				{
+					for(int j = 0; j < pixelSize; j++)
+					{
+						image.setRGB(x + i, y + j, colorList.get(n).getRGB());
+					}
+				}
+				y += pixelSize;
 				x = 0;
-				y++;
 			}
 		}
 		
